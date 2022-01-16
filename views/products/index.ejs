@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+</head>
+
+<body>
+    <h1>
+        <%= title %> Products
+    </h1>
+
+    <a href="/products/new">Create a new product</a>
+
+    <ul>
+        <% products.forEach(product=> { %>
+            <li>
+                <%= product.name %> - <a href="/products/<%= product.id%>">See Details</a>
+            </li>
+            <% }) %>
+    </ul>
+
+    <% if (title !=='All' ) { %>
+        <a href="/products">All Products</a>
+        <% } %>
+
+<a href="/">Homepage</a>
+</body>
+
+</html>
